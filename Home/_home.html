@@ -1,0 +1,45 @@
+<h1>Home {{home.title}}</h1>
+
+<nav aria-label="...">
+  <ul class="pagination">
+      <li ng-class="home.currentPage == 1? 'disabled': ''">
+          <a href="javascript:" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+          </a>
+      </li>
+    <li ng-click="home.pageChange(page)" ng-repeat="page in home.pages" ng-class="home.currentPage == page ? 'active' : ''"><a href="javascript:">{{page}}</a></li>      
+      <li ng-class="home.currentPage == home.pages.length ? 'disabled': ''">
+      <a href="javascript:" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div class="list-group col-lg-6 col-md-6 ">
+<ul style='list-style: none'>
+<li  ng-repeat="post in home.pagedPost" ng-click="home.currentPost = post"> <a  class="list-group-item">{{post.title}}</a></li>
+</ul>
+
+</div>
+<div class="panel-group" ng-show="home.currentPost">
+<div class="panel panel-default col-lg-6 col-md-6 ">
+
+
+    <div class="panel-heading">{{home.currentPost.title}}</div>
+    <div class="panel-body" >{{home.currentPost.body}}</div>
+   <!-- <a href="./components/editable/_editable.html" target="_blank">edit </a>-->
+   <button ng-click="home.edit(home.currentPost.id)">edit</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

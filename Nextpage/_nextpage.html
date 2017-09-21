@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+   <h2>{{nextpage.title}}</h2>
+   
+    <table class="container">
+    <table id="tblCRUD">
+    <tbody>
+        <tr><td><span>Title</span></td><td><input type="text" ng-model="nextpage.post.title" id="title"/></td></tr>
+        <tr><td><span>body</span></td><td><input type="text" ng-model="nextpage.post.body" id="body"/></td></tr>
+        <tr><td><span>id</span></td><td><input type="text" readonly ng-model="nextpage.post.id" id="id"/></td></tr>
+    </tbody>
+    </table>
+   <button ng-click="nextpage.save(nextpage.post.id)">save</button>
+   <button ng-click="nextpage.reset()">reset</button>
+   </table>
+<h1 ng-show="nextpage.post.id"> </h1>
+    {{nextpage.post.data.id}}
+</body>
+</html>
